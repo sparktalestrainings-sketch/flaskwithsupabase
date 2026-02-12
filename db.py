@@ -11,7 +11,7 @@ if not DB_URL:
     # fallback to local SQLite for dev/testing
     DB_URL = "sqlite:///chat_history.db"
 
-engine = create_engine(DATABASE_URL,pool_pre_ping=True, echo=True, future=True, connect_args={"sslmode": "require"})
+engine = create_engine(DATABASE_URL,pool_pre_ping=True, echo=True, future=True)
 
 #SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 SessionLocal = sessionmaker(bind=engine)
